@@ -1,9 +1,14 @@
-<h1>All restaurants</h1>
+<h1 class="text-center my-4">All restaurants</h1>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %> - <%= restaurant.category.capitalize %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Add restaurant", new_restaurant_path %>
+<div class="container w-25">
+  <ul class="list-group">
+    <% @restaurants.each do |restaurant| %>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold"><%= link_to restaurant.name, restaurant_path(restaurant) %></div>
+          <%= restaurant.category.capitalize %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
